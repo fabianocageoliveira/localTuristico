@@ -1,0 +1,261 @@
+
+/* ============================= */
+/* Variáveis Globais e Reset    */
+/* ============================= */
+:root {
+    --bg-main: #1E1E1E;
+    --bg-container: #ffffff18;
+    --bg-content: #F4F5F0;
+    --accent: #e1624f;
+    --text-base: #333;
+    --text-muted: #666;
+    --highlight-purple: purple;
+    --highlight-red: red;
+    --highlight-orange: orange;
+    --highlight-blue: blue;
+    --radius-lg: 40px;
+    --radius-md: 28px;
+    --font-main: 'Open Sans', sans-serif;
+
+    /* Tema escuro */
+    --dark-bg: #121212;
+    --dark-content: #1f1f1f;
+    --dark-text: #e1e1e1;
+    --dark-accent: #ff6b6b;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-main);
+    color: var(--text-base);
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ============================= */
+/* Estrutura Principal           */
+/* ============================= */
+#page {
+    max-width: 1380px;
+    margin: 65px auto;
+    padding: 65px 20px;
+    border-radius: var(--radius-lg);
+    background-color: var(--bg-container);
+}
+
+main {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 65px;
+    background-color: var(--bg-content);
+    border-radius: var(--radius-lg);
+}
+
+/* ============================= */
+/* Botão Dark mode               */
+/* ============================= */
+#toggle-theme {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 12px 14px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    transition: background 0.3s ease;
+    z-index: 999;
+}
+
+#toggle-theme:hover {
+    background: #c94c3c;
+}
+
+/* ============================= */
+/* Tipografia                    */
+/* ============================= */
+h1 {
+    font-size: 2.25rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+h1, h2, h3 {
+    margin: 8px 0;
+    color: var(--text-base);
+    transition: color 0.3s ease;
+}
+
+p {
+    margin: 16px 0;
+    color: var(--text-base);
+    transition: color 0.3s ease;
+}
+
+/* ============================= */
+/* Imagens                       */
+/* ============================= */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+    transition: filter 0.3s ease;
+}
+
+img:hover {
+    filter: brightness(1.1);
+}
+
+/* ============================= */
+/* Hero e Figuras                */
+/* ============================= */
+figure {
+    margin: 40px 0;
+}
+
+figcaption {
+    font-size: 0.875rem;
+    font-style: italic;
+    text-align: center;
+    margin-top: 24px;
+    color: var(--text-muted);
+}
+
+/* ============================= */
+/* Cabeçalhos e Seções          */
+/* ============================= */
+header span {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+}
+
+#content-list header {
+    padding: 64px 0 32px;
+}
+
+/* ============================= */
+/* Listagem de Artigos           */
+/* ============================= */
+.list {
+    width: 100%;
+    margin-bottom: 48px;
+}
+
+.list img {
+    margin-bottom: 20px;
+}
+
+.list h3 {
+    margin-bottom: 8px;
+}
+
+/* Destaques de cores em listas */
+#haedong ul li,
+#beomeo ul li {
+    color: var(--highlight-blue);
+}
+
+#yongdusan ul li:first-child {
+    color: var(--highlight-purple);
+}
+
+#yongdusan ul li:nth-child(2) {
+    color: var(--highlight-red);
+}
+
+#yongdusan ul li:last-child {
+    color: var(--highlight-orange);
+}
+
+#yongdusan p:last-child {
+    text-align: center;
+}
+
+/* ============================= */
+/* Rodapé                        */
+/* ============================= */
+footer {
+    text-align: center;
+    padding: 40px 0;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+footer img {
+    vertical-align: middle;
+    margin: 0 8px;
+    width: 16px;
+    height: 16px;
+}
+
+/* ============================= */
+/* Outros Elementos              */
+/* ============================= */
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #D9D9D9;
+    margin: 40px auto;
+    width: 100%;
+}
+
+/* ============================= */
+/* Tema Escuro                   */
+/* ============================= */
+body.dark-mode {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+}
+
+body.dark-mode main {
+    background-color: var(--dark-content);
+}
+
+body.dark-mode header span {
+    color: var(--dark-accent);
+}
+
+body.dark-mode h1, 
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode p {
+    color: var(--dark-text);
+}
+
+/* ============================= */
+/* Responsividade                */
+/* ============================= */
+@media (max-width: 768px) {
+    #page, main {
+        padding: 32px 16px;
+    }
+
+    h1 { font-size: 1.75rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.25rem; }
+    figcaption { font-size: 0.8rem; }
+}
